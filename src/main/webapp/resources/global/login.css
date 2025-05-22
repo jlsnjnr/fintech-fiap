@@ -1,0 +1,85 @@
+body {
+    background: #f8f9fa;
+    color: #212529;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.login-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+
+.login-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: .3rem;
+    padding: .75rem 1rem;
+}
+
+.input-group .form-control {
+    border-right: none;
+}
+
+.input-group .btn-outline-secondary {
+    border-left: none;
+    border-color: #ced4da;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    padding: .75rem 1rem;
+    font-size: 1.1rem;
+    border-radius: .3rem;
+}
+
+.btn-outline-secondary {
+    border-color: #ced4da;
+    color: #6c757d;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+.header-section,
+.main-content,
+.card-content,
+.card,
+.card-body,
+.card-title,
+.card-text,
+.list-section,
+.list-item,
+.profile-photo {
+    display: none;
+}
+
+.text-login {
+    color: #005CEE !important;
+}
+
+.text-create-new-account {
+    color: black;
+}
