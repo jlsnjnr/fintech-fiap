@@ -1,0 +1,21 @@
+﻿
+
+.cadastro-ganho-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.login-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+
+.card-header{
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: .5rem;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}

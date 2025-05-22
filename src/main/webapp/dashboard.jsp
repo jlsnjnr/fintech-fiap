@@ -23,7 +23,7 @@
   <div class="container py-3">
     <div class="row align-items-center mb-3">
       <div class="col">
-        <h1 class="h5 mb-0">Olá, Júnior</h1>
+        <h1 class="h5 mb-0">Olá, <span id="nomeUsuario"></span></h1>
         <p class="mb-0">R$ 20,00</p>
         <p class="text-muted">Saldo atual</p>
       </div>
@@ -42,13 +42,16 @@
       <div class="col text-center">
         <button class="btn btn-primary w-100 d-flex flex-column align-items-center">
           <i class="ph ph-paper-plane-tilt"></i>
-          Cadastrar
+          <a href="cadastro-divida.jsp" class="btn btn-sucess">
+            Cadastrar dívida
+          </a>
         </button>
       </div>
+
       <div class="col text-center">
         <button class="btn btn-light w-100 d-flex flex-column align-items-center">
           <i class="ph ph-money"></i>
-          Todas
+          Ganhos
         </button>
       </div>
       <div class="col text-center">
@@ -285,5 +288,17 @@
   </div>
 </div>
 <script src="resources/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nome = localStorage.getItem('nomeUsuario');
+    const nomeSpan = document.getElementById('nomeUsuario');
+
+    if (nome && nomeSpan) {
+      nomeSpan.innerText = nome;
+    } else {
+      nomeSpan.innerText = 'usuário';
+    }
+  });
+</script>
 </body>
 </html>
