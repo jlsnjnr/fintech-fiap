@@ -27,16 +27,16 @@
                 <span class="fs-6 text fw-lighter">Hora de se controlar.</span>
             </div>
 
-            <form>
+            <form id="loginForm">
                 <div class="mb-3">
                     <label for="email" class="form-label visually-hidden">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Seu email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu email" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="password" class="form-label visually-hidden">Senha</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="password" placeholder="Senha">
+                        <input type="password" class="form-control" id="password" name="senha" placeholder="Senha" required>
                         <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                             <i class="ph ph-eye"></i>
                         </button>
@@ -49,7 +49,7 @@
 
                 <div class="text-center">
                     <p class="mb-2">Ainda não tem conta?</p>
-                    <a class="text-create-new-account" href="">Crie aqui</a>
+                    <a class="text-create-new-account" href="register.jsp">Crie aqui</a>
                 </div>
             </form>
         </div>
@@ -57,9 +57,31 @@
 
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
-            event.preventDefault(); 
-            window.location.href = 'dashboard.jsp';
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('usuario/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(data)
+                });
+
+                if (response.ok) {
+                    window.location.href = 'dashboard.jsp';
+                } else {
+                    const error = await response.text();
+                    alert(error || 'Erro ao fazer login');
+                }
+            } catch (error) {
+                alert('Erro ao processar a requisição');
+                console.error('Error:', error);
+            }
         });
 
         document.getElementById('togglePassword').addEventListener('click', function() {
