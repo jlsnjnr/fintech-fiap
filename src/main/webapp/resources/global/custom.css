@@ -65,54 +65,52 @@ body {
 }
 
 .main-content {
-    background-color: #f8f9fa;
-    position: relative;
-    z-index: 2;
+    background-color: transparent;
     margin-top: -6rem;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
-    padding-top: 4rem;
     padding-bottom: 2rem;
     flex-grow: 1;
-    overflow: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    padding-top: 3rem;
 }
 
 .main-content .container {
-     background-color: transparent;
+     background-color: transparent !important;
 }
 
+.main-content .row,
+.main-content .col{
+    background-color: transparent !important;
+}
+
+
 .card-content {
-    position: absolute;
-    top: 280px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 3rem);
-    max-width: 1140px;
+    background-color: transparent ;
     z-index: 3;
 }
 
 .card {
+    background-color: transparent;
     border: none;
-    border-radius: .5rem;
+    border-radius: .75rem;
     box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
 }
 
-.card-body {
+.card .card-body {
     padding: 1rem;
 }
 
-.card-title {
+.card .card-title {
     font-size: 1rem;
     color: #6c757d;
-    margin-bottom: .25rem;
 }
 
-.card-text {
-    font-size: 1.5rem;
+.card .card-text {
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 0;
 }
 
 .card.bg-success {
@@ -125,9 +123,11 @@ body {
     color: #ffffff !important;
 }
 .list-section {
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 0;
+    color: transparent;
 }
 
 .list-section .row {
