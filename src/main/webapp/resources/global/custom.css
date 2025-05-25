@@ -124,40 +124,54 @@ body {
 .card.bg-success .bi {
     color: #ffffff !important;
 }
-
 .list-section {
-    padding: 1rem;
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-top: 0;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
-.list-section .container {
-    background-color: transparent;
-}
-
-.list-section .row.mb-2 {
-    margin-bottom: 1rem !important;
-}
-
-.list-section .row.g-2.mb-2 {
+.list-section .row {
     display: flex;
-    align-items: stretch;
-    margin-bottom: .5rem;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
 }
 
-.list-section .row.g-2.mb-2 > div[class^="col"] {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 0;
-    flex-grow: 1;
+.list-section .row.header {
+    border-bottom: 2px solid #005CEE;
+    font-weight: bold;
+    color: #6c757d; /* cinza do cabeçalho */
+    font-size: 0.9rem;
 }
 
-.list-section .row.g-2.mb-2 > div:nth-child(1) { flex-basis: 25%; max-width: 25%; padding: 0 .5rem; }
-.list-section .row.g-2.mb-2 > div:nth-child(2) { flex-basis: 15%; max-width: 15%; padding: 0 .5rem; }
-.list-section .row.g-2.mb-2 > div:nth-child(3) { flex-basis: 20%; max-width: 20%; padding: 0 .5rem; }
-.list-section .row.g-2.mb-2 > div:nth-child(4) { flex-basis: 20%; max-width: 20%; padding: 0 .5rem; }
-.list-section .row.g-2.mb-2 > div:nth-child(5) { flex-basis: 20%; max-width: 20%; padding: 0 .5rem; }
+.list-section .row > div {
+    flex-basis: 20%; /* cada coluna com 20% da largura total */
+    padding: 0 0.5rem;
+    overflow-wrap: break-word;
+    color: #212529; /* texto escuro */
+    font-size: 0.9rem;
+}
+
+.list-section .row.list-item {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 .05rem .1rem rgba(0, 0, 0, .05);
+    margin-bottom: 0.5rem;
+}
+
+.list-section .row.list-item > div {
+    color: #212529;
+}
+
+.list-section .text-success {
+    color: #198754 !important;
+    font-weight: bold;
+}
+
+.list-section .text-danger {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
 
 .list-item {
     background-color: #ffffff;

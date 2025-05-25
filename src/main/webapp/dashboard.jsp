@@ -36,33 +36,29 @@
                 class="profile-photo rounded-circle bg-secondary"
         >
       </div>
-    </div>
 
-    <div class="row mb-4 w-50">
-      <div class="col text-center">
-        <button class="btn btn-primary w-100 d-flex flex-column align-items-center">
-          <i class="ph ph-paper-plane-tilt"></i>
-          <a href="cadastro-divida.jsp" class="btn btn-sucess">
+      <div class="row mb-4 justify-content-center">
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+          <a href="cadastro-divida.jsp" class="btn btn-primary w-100 d-flex flex-column align-items-center py-3">
+            <i class="ph ph-paper-plane-tilt mb-2" style="font-size: 1.5rem;"></i>
             Cadastrar dívida
           </a>
-        </button>
-      </div>
-
-      <div class="col text-center">
-        <button class="btn btn-light w-100 d-flex flex-column align-items-center">
-          <i class="ph ph-money"></i>
-          Ganhos
-        </button>
-      </div>
-      <div class="col text-center">
-        <button class="btn btn-light w-100 d-flex flex-column align-items-center">
-          <i class="ph ph-thumbs-down"></i>
-          Dívidas
-        </button>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+          <button class="btn btn-light w-100 d-flex flex-column align-items-center py-3">
+            <i class="ph ph-money mb-2" style="font-size: 1.5rem;"></i>
+            Ganhos
+          </button>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+          <button class="btn btn-light w-100 d-flex flex-column align-items-center py-3">
+            <i class="ph ph-thumbs-down mb-2" style="font-size: 1.5rem;"></i>
+            Dívidas
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <div class="row g-3 mb-4 card-content">
   <div class="col">
@@ -103,186 +99,60 @@
 <div class="main-content">
   <div class="container">
     <div class="list-section">
-      <div class="row mb-2">
-        <div class="col"><small class="text-muted">Nome</small></div>
-        <div class="col"><small class="text-muted">Tipo</small></div>
-        <div class="col"><small class="text-muted">Categoria</small></div>
-        <div class="col"><small class="text-muted">Transação</small></div>
-        <div class="col"><small class="text-muted">Valor</small></div>
+      <div class="row header">
+        <div>Nome</div>
+        <div>Tipo</div>
+        <div>Categoria</div>
+        <div>Transação</div>
+        <div>Valor</div>
       </div>
 
-      <div class="row g-2 list-item mb-2">
-        <div class="col">
-          <div>
-            <p class="mb-0">Pagamento Aluguel</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Saída</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Moradia</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Boleto</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div>
-            <p class="mb-0 text-danger">R$ 1400,00</p>
-          </div>
-        </div>
+      <div class="row list-item">
+        <div>Pagamento Aluguel</div>
+        <div>Saída</div>
+        <div>Moradia</div>
+        <div>Boleto</div>
+        <div class="text-danger">R$ 1400,00</div>
       </div>
 
-      <div class="row g-2 mb-2">
-        <div class="col">
-          <div>
-            <p class="mb-0">Salário Mensal</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Entrada</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Trabalho</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Transferência</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div>
-            <p class="mb-0 text-success">R$ 3000,00</p>
-          </div>
-        </div>
+      <div class="row list-item">
+        <div>Salário Mensal</div>
+        <div>Entrada</div>
+        <div>Trabalho</div>
+        <div>Transferência</div>
+        <div class="text-success">R$ 3000,00</div>
       </div>
 
-      <div class="row g-2 mb-2">
-        <div class="col">
-          <div>
-            <p class="mb-0">Compra Supermercado</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Saída</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Alimentação</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Cartão de Crédito</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div>
-            <p class="mb-0 text-danger">R$ 350,00</p>
-          </div>
-        </div>
+      <div class="row list-item">
+        <div>Compra Supermercado</div>
+        <div>Saída</div>
+        <div>Alimentação</div>
+        <div>Cartão de Crédito</div>
+        <div class="text-danger">R$ 350,00</div>
       </div>
 
-      <div class="row g-2 mb-2">
-        <div class="col">
-          <div>
-            <p class="mb-0">Investimento Tesouro Direto</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Saída</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Investimento</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Transferência</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div>
-            <p class="mb-0 text-danger">R$ 500,00</p>
-          </div>
-        </div>
+      <div class="row list-item">
+        <div>Investimento Tesouro Direto</div>
+        <div>Saída</div>
+        <div>Investimento</div>
+        <div>Transferência</div>
+        <div class="text-danger">R$ 500,00</div>
       </div>
 
-      <div class="row g-2 mb-2">
-        <div class="col">
-          <div>
-            <p class="mb-0">Freelance Pagamento</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Entrada</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Trabalho Extra</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Pix</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div>
-            <p class="mb-0 text-success">R$ 800,00</p>
-          </div>
-        </div>
+      <div class="row list-item">
+        <div>Freelance Pagamento</div>
+        <div>Entrada</div>
+        <div>Trabalho Extra</div>
+        <div>Pix</div>
+        <div class="text-success">R$ 800,00</div>
       </div>
 
-      <div class="row g-2 mb-2">
-        <div class="col">
-          <div>
-            <p class="mb-0">Conta de Luz</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Saída</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Contas Fixas</p>
-          </div>
-        </div>
-        <div class="col">
-          <div>
-            <p class="mb-0">Boleto</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div>
-            <p class="mb-0 text-danger">R$ 150,00</p>
-          </div>
-        </div>
+      <div class="row list-item">
+        <div>Conta de Luz</div>
+        <div>Saída</div>
+        <div>Contas Fixas</div>
+        <div>Boleto</div>
+        <div class="text-danger">R$ 150,00</div>
       </div>
     </div>
   </div>
