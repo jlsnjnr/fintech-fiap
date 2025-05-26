@@ -57,30 +57,33 @@
 
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
 
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const data = {
+                email: formData.get('email'),
+                senha: formData.get('senha')
+            };
 
             try {
-                const response = await fetch('usuario/login', {
+                const response = await fetch('${pageContext.request.contextPath}/usuario/login', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Content-Type': 'application/json'
                     },
-                    body: new URLSearchParams(data)
+                    body: JSON.stringify(data)
                 });
 
                 if (response.ok) {
-                    window.location.href = 'dashboard.jsp';
+                    window.location.href = '${pageContext.request.contextPath}/dashboard';
                 } else {
                     const error = await response.text();
-                    alert(error || 'Erro ao fazer login');
+                    alert(error);
                 }
             } catch (error) {
-                alert('Erro ao processar a requisição');
-                console.error('Error:', error);
+                console.error('Erro:', error);
+                alert('Erro ao fazer login');
             }
         });
 

@@ -79,22 +79,32 @@ public class UsuarioController extends HttpServlet {
 
     private void realizarLogin(HttpServletRequest request, HttpServletResponse response) 
             throws SQLException, IOException {
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
+        // Ler o corpo da requisição JSON
+        StringBuilder buffer = new StringBuilder();
+        String line;
+        try (java.io.BufferedReader reader = request.getReader()) {
+            while ((line = reader.readLine()) != null) {
+                buffer.append(line);
+            }
+        }
 
-        if (email == null || senha == null) {
+        // Converter JSON para objeto
+        com.google.gson.Gson gson = new com.google.gson.Gson();
+        LoginRequest loginRequest = gson.fromJson(buffer.toString(), LoginRequest.class);
+
+        if (loginRequest == null || loginRequest.email == null || loginRequest.senha == null) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Dados incompletos");
             return;
         }
 
         try {
-            UsuarioModel usuario = usuarioDAO.buscarPorEmail(email);
+            UsuarioModel usuario = usuarioDAO.buscarPorEmail(loginRequest.email);
             if (usuario == null) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Usuário não encontrado");
                 return;
             }
 
-            String senhaHash = gerarHashSenha(senha);
+            String senhaHash = gerarHashSenha(loginRequest.senha);
             if (!usuario.getSenha().equals(senhaHash)) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Senha incorreta");
                 return;
@@ -135,5 +145,11 @@ public class UsuarioController extends HttpServlet {
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Erro ao gerar hash da senha", e);
         }
+    }
+
+    // Classe interna para deserialização do JSON
+    private static class LoginRequest {
+        String email;
+        String senha;
     }
 } 
