@@ -262,12 +262,10 @@ body {
     font-weight: bold;
 }
 
-/* Ensure Phosphor icons are used in cards */
 .card .bi {
     display: none;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .header-section {
         padding-bottom: 5rem;

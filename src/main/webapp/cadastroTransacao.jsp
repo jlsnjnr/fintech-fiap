@@ -11,8 +11,7 @@
 <body>
     <div class="container mt-5">
         <h2>Cadastrar Transação</h2>
-        
-        <%-- Display error message if present --%>
+
         <c:if test="${not empty erro}">
             <div class="alert alert-danger" role="alert">
                 ${erro}

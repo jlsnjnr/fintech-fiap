@@ -79,7 +79,6 @@ public class UsuarioController extends HttpServlet {
 
     private void realizarLogin(HttpServletRequest request, HttpServletResponse response) 
             throws SQLException, IOException {
-        // Ler o corpo da requisição JSON
         StringBuilder buffer = new StringBuilder();
         String line;
         try (java.io.BufferedReader reader = request.getReader()) {
@@ -88,7 +87,6 @@ public class UsuarioController extends HttpServlet {
             }
         }
 
-        // Converter JSON para objeto
         com.google.gson.Gson gson = new com.google.gson.Gson();
         LoginRequest loginRequest = gson.fromJson(buffer.toString(), LoginRequest.class);
 
@@ -147,7 +145,6 @@ public class UsuarioController extends HttpServlet {
         }
     }
 
-    // Classe interna para deserialização do JSON
     private static class LoginRequest {
         String email;
         String senha;

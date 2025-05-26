@@ -23,7 +23,6 @@ public class Transacao {
         this.idUsuario = idUsuario;
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -72,12 +71,10 @@ public class Transacao {
         return idUsuario;
     }
 
-    // Getter para retornar a data como java.util.Date para compatibilidade com JSTL
     public java.util.Date getUtilDate() {
         if (this.data == null) {
             return null;
         }
-        // Convertendo LocalDate para java.util.Date
         return java.util.Date.from(this.data.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
     }
 }

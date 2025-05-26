@@ -72,7 +72,6 @@
 
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Toggle password visibility
         document.getElementById('togglePassword').addEventListener('click', function() {
             const passwordInput = document.getElementById('password');
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -89,7 +88,6 @@
             this.querySelector('i').classList.toggle('ph-eye-slash');
         });
 
-        // Form submission
         document.getElementById('registerForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
@@ -114,7 +112,6 @@
                 });
 
                 if (response.ok) {
-                    //Salva o nome no localStorage
                     localStorage.setItem('nomeUsuario', data.nome);
 
                     alert('Conta criada com sucesso!');

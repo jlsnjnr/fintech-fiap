@@ -131,9 +131,7 @@
                 });
 
                 if (response.ok) {
-                    // Remover cookie (opcional, backend deve invalidar)
                     document.cookie = 'jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                    // Redirecionar
                     window.location.href = '${pageContext.request.contextPath}/index.jsp';
                 } else {
                     const error = await response.text();
